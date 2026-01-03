@@ -51,17 +51,40 @@
 //do-while loop
 //exit control loop
 
-let randomNum=Math.round(Math.random()*100);
-console.log(randomNum);
-let num;
 
-do {
-    num=prompt("enter number");
-    console.log("Enter num "+ num);
+// let randomNum=Math.round(Math.random()*100);
+// console.log(randomNum);
+// let num;
 
-    if(randomNum==num){
-        console.log("Gussed Correctly");
-    } else {
-        console.log("Try once more!")
+// do {
+//     num=prompt("enter number");
+//     console.log("Enter num "+ num);
+
+//     if(randomNum==num){
+//         console.log("Gussed Correctly");
+//     } else {
+//         console.log("Try once more!")
+//     }
+// } while (randomNum!=num);
+
+
+//Nested Loop
+//  table multiplication
+// for(let num=2; num<=10; num++){
+//     for(let i=1; i<=10; i++){
+//         console.log(`${num} * ${i} = ${num*i}`);
+//     } 
+// }
+
+//  prime num till 100
+for(let num=2; num<=100; num++) {
+    for(let i=2; i <num; i++){
+        if(num%i==0){
+            isPrime=false;
+            break;
+        } else {
+            console.log(num);
+            break;
+        }
     }
-} while (randomNum!=num);
+}
