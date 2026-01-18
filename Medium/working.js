@@ -50,5 +50,40 @@ Sctict mode:
 -on top of file/function use 'use strict'
 -it prevents assigning values to variables without declaration.
 
+
+Closures:
+-it remembers the lexical structure of the variable even it is popped out of the call stack.
+
 */
 
+//closure example
+
+let a='Global';
+
+function outerPrint() {
+    let b='OuterPrint';
+
+    return function innerPrint() {
+        let c='innerPrint';
+        return `${a} -> ${b} -> ${c}`
+    }
+}
+
+// const show=outerPrint();
+// console.log(show);
+// const printInner = show();
+// console.log(printInner);
+
+function generateID(num){
+    let a=num;
+//Implement Your function here
+    return function generateID() {
+        // a=Number(num);
+        return a++;
+
+    };
+}
+
+const func = generateID(100);
+console.log(func());//Output : A_2023_99
+console.log(func()); // Output: A_2023_100
